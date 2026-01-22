@@ -41,7 +41,7 @@
   const progressText = document.getElementById("progress-text");
   const preloader = document.getElementById("preloader");
 
-  document.body.style.overflow = "hidden"; // disable scrolling during preload
+  document.body.style.overflow = "hidden";
 
   function updateProgress() {
     if (progress < 100) {
@@ -60,7 +60,6 @@
         // Re-enable scrolling when preloader slides away
         document.body.style.overflow = "auto";
 
-        // Remove preloader from DOM after animation
         setTimeout(() => {
           preloader.style.display = "none";
         }, 1000); // match CSS transition
@@ -72,7 +71,6 @@
 });
 
   
-
    document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -88,18 +86,13 @@
   });
 });
 
-
-
-   // Ensure ScrollTrigger plugin is registered (safe to call even if registered earlier)
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
   }
 
-  // Run after everything (images, fonts, etc.) has loaded
   window.addEventListener('load', () => {
-    const debugMarkers = false; // markers to see  GSAP triggers, set to true or false 
+    const debugMarkers = false;
 
-    // If no .tag elements found, log and exit
     const tags = document.querySelectorAll('.skills .tag');
     if (!tags.length) {
       console.warn('GSAP: no elements found with selector ".skills .tag"');
@@ -109,7 +102,7 @@
     gsap.from(tags, {
       scrollTrigger: {
         trigger: ".skills",
-        start: "top 80%",    // tweak to "top 90%", "center center", etc.
+        start: "top 80%",
         end: "bottom top",
         toggleActions: "play none none none",
         markers: debugMarkers
@@ -121,22 +114,19 @@
       ease: "power3.out"
     });
 
-     // ========== Projects (new) ==========
-    // Animates each .projects-content block as you scroll into the projects section.
     gsap.from(".projects .projects-content", {
       scrollTrigger: {
         trigger: ".projects",
-        start: "top 75%",        // tweak to control when animations start
+        start: "top 75%",
         toggleActions: "play none none none"
       },
       opacity: 0,
-      y: 60,                    // slides up from below
+      y: 60,
       duration: 0.8,
-      stagger: 0.18,            // stagger between each project card
+      stagger: 0.18,
       ease: "power3.out"
     });
 
-    // OPTIONAL: animate images inside each project slightly after the card
     gsap.from(".projects .projects-content-images img", {
       scrollTrigger: {
         trigger: ".projects",

@@ -48,7 +48,6 @@
   0% { transform: scale(1); opacity: 1; }
   100% { transform: scale(1.2); opacity: 0; }
 }
-/*sideways transition*/
 
 
 
@@ -59,6 +58,7 @@
 }
 
 /*-----------------------------------------------------------------body---------------------------------------------------------------------------*/
+
 body {
   font-family: var(--font-body);
   background-color: var(--color-background);
@@ -76,38 +76,6 @@ body {
 }
 
 /*----------------------------------------------nav bar-----------------------------------------------*/
-
-/*.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 10;
-  padding: var(--spacing-sm) 0;
-}
-.navbar .logo {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--color-primary);
-  font-size: 1.5rem;
-}
-.nav-links a {
-  margin-left: var(--spacing-md);
-  text-decoration: none;
-  color: var(--color-primary);
-  font-weight: bold;
-  font-size: 20px;
-  padding-right: 15px;
-}
-.nav-links a:hover {
-  color: var(--color-secondary);
-}
-.logo-img {
-  height: 25px;  adjust as needed 
-  width: auto;
-  display: block;
-}*/
-
-
 
 .navbar {
   position: fixed;
@@ -137,13 +105,11 @@ body {
   animation: grainMove 10s linear infinite;
 }
 
-/* Make sure container content stays on top */
 .navbar .container {
   position: relative;
   z-index: 1;
 }
 
-/* Logo styling */
 .logo-img {
   height: 25px;
   width: auto;
@@ -167,7 +133,7 @@ body {
 }
 
 .nav-links a:hover {
-  color: var(--color-secondary);
+  color: var(--color-tertiary);
 }
 
 /*hambuger button */
@@ -202,14 +168,13 @@ body {
   transform: translateY(-7px) rotate(-45deg);
 }
 
-/* mobile sizing */
 @media (max-width: 768px) {
   .menu-toggle {
     display: flex;
   }
 
    .nav-links {
-    position: fixed;      /* stick to top */
+    position: fixed;
     top: 41px;           
     left: 0;
     right: 0;
@@ -219,13 +184,13 @@ body {
     overflow: hidden;
     max-height: 0;
     pointer-events: none;
-    z-index: 999;         /* above page content */
+    z-index: 999;
     transition: max-height 0.4s ease;
     background-color: var(--color-background-dark);
   }
 
   .nav-links.open {
-    max-height: 300px;    /*  number of links */
+    max-height: 300px; 
     pointer-events: all;
   }
 
@@ -247,10 +212,10 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-color: var(--color-background); /* keep your existing color */
+  background-color: var(--color-background);
   padding: var(--spacing-xl) var(--spacing-md);
   color: var(--color-white);
-  z-index: 0; /* base layer */
+  z-index: 0;
 }
 .hero-text p {
   font-family: var(--font-body-medium);
@@ -259,8 +224,8 @@ body {
 /*----------------------------------------------grain overlay-----------------------------------------------*/
 
 .grain {
-  position: relative; /* make sure ::after positions correctly */
-  overflow: hidden;   /* optional: prevents grain overflow */
+  position: relative;
+  overflow: hidden;
 }
 
 .grain::after {
@@ -270,13 +235,13 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* allows clicks through */
+  pointer-events: none;
   background-image: repeating-conic-gradient(
     rgba(255,255,255,0.05) 0% 10%, 
     rgba(0,0,0,0.05) 10% 20%
   );
-  background-size: 3px 3px; /* adjust grain density */
-  z-index: 1; /* sits above background but below content */
+  background-size: 3px 3px;
+  z-index: 1;
   animation: grainMove 10s linear infinite;
 }
 
@@ -286,7 +251,6 @@ body {
   100% { background-position: 100px 100px; }
 }
 
-/* Keeps hero above the overlay */
 .hero-text,
 .hero-animation {
   position: relative;
@@ -299,7 +263,7 @@ body {
 
 .about {
   text-align: center;
-  overflow: visible; /* allows sticky to work */
+  overflow: visible;
 }
 
 .about-content {
@@ -311,10 +275,10 @@ body {
 .sticky-image {
   position: sticky;
   top: 48px;
-  width: 30%;         /* or max-width: 800px if you prefer fixed limit */
-  margin: 0 auto;     /* centers the container */
+  width: 30%;
+  margin: 0 auto;
   display: block;
-  text-align: center; /* ensures inner image stays centered */
+  text-align: center;
   z-index: 5;
 }
 
@@ -423,8 +387,7 @@ display: inline-block;
 /*----------------------------------------------projects-----------------------------------------------*/
 .projects {
   text-align: center;
-  /*border: 1px solid rgb(255, 230, 0);*/
-  overflow: visible; /* allows sticky to work */
+  overflow: visible; 
   
 
 }
@@ -478,19 +441,19 @@ display: inline-block;
   
 @media (max-width: 768px) {
     .projects-content {
-        padding: 50px 6% 5% 6%;  /* Remove bottom padding */
+        padding: 50px 6% 5% 6%;
     }
     
     .projects-content-images {
-        padding: 25px 0;  /* Remove side padding */
+        padding: 25px 0;
     }
 
     .projects-content-final {
-        padding: 50px 6% 20% 6%;  /* bottom padding so projects img fits */
+        padding: 50px 6% 20% 6%;
     }
     
     .projects-content-final-images {
-        padding: 25px 0;  /* Remove side padding */
+        padding: 25px 0;
     }
 }
 /* ------------------project link and github images----------------- */
@@ -516,7 +479,7 @@ display: inline-block;
   height: 25px;
   vertical-align: middle;
   transition: transform 0.2s ease, opacity 0.3s ease, filter 0.3s ease;
-  filter: brightness(0) invert(1); /* makes dark icons white */
+  filter: brightness(0) invert(1);
 }
 
 
@@ -658,9 +621,9 @@ display: inline-block;
     cursor: pointer;
     font-weight: bold;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block; /* ensure it can animate */
-    display: block;      /* take full width of content */
-  margin: 0 auto;      /* center horizontally */
+    display: inline-block;
+    display: block;
+  margin: 0 auto;
   }
 
   .submit-btn:hover {
@@ -674,17 +637,19 @@ display: inline-block;
     transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
-  .contact-image :hover {
-    transform: translateY(-2px);
-    opacity: 0.8;
-  }
+  .contact-image img {
+  width: 30px;
+  margin: 10px;
+  margin-top: 50px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.3s ease;
+}
 
-  .contact-image img{
-    width: 30px;
-    margin: 10px;
-    margin-top: 50px;
-    filter: brightness(0) invert(1);
-  }
+.contact-image img:hover {
+  transform: translateY(-2px);
+  filter: invert(80%) sepia(30%) saturate(300%) hue-rotate(150deg) brightness(1.2);
+}
+
   .circle-image {
     text-align: center;
     padding: 50px;
@@ -734,7 +699,7 @@ display: inline-block;
   }
 
   .footer-links a:hover {
-    color: var(--color-secondary);
+    color: var(--color-tertiary);
   }
 
   .footer p {
@@ -742,8 +707,6 @@ display: inline-block;
     font-family: var(--font-body-);
   }
 
-
-/* Responsive */
 @media(min-width: 640px) {
   .hero {
     flex-direction: column;
@@ -792,7 +755,7 @@ display: inline-block;
   left: 0;
 }
 .sticky-image img {
-  transform-origin: top center; /* anchor scale to top edge */
+  transform-origin: top center;
 }
 /* Loading Text */
 #page-transition .loading-text {
@@ -815,7 +778,6 @@ display: inline-block;
   to { transform: rotate(360deg); }
 }
 
-/* Optional: Add grain effect to transition */
 #page-transition::after {
   content: "";
   position: absolute;
@@ -863,7 +825,6 @@ display: inline-block;
    display: none !important;
 }
 
-/* Colors for feedback */
 .form-toast.success {
   border-color: var(--color-primary);
   color: var(--color-primary);
