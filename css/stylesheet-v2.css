@@ -339,18 +339,7 @@ display: inline-block;
 }
 
 
-.html { border: 2px solid var(--color-white); }
-.css { border: 2px solid var(--color-white); }
-.js{ border: 2px solid var(--color-white); }
-.git { border: 2px solid var(--color-white); }
-.node { border: 2px solid var(--color-white); }
-.crm { border: 2px solid var(--color-white); }
-.brevo { border: 2px solid var(--color-white); }
-.stripe { border: 2px solid var(--color-white); }
-.supabase { border: 2px solid var(--color-white); }
-
-
-
+.item { border: 2px solid var(--color-white); }
 
 /* ------------------about me - max-width 768----------------- */
 @media (max-width: 768px) {
