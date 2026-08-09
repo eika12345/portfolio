@@ -267,7 +267,7 @@ body {
 }
 
 .about-content {
-  padding: 60px 50px 60px 50px;
+  padding: 40px 50px 80px 50px;
   z-index: 1;
   
 }
@@ -312,7 +312,7 @@ body {
   color: var(--color-white);
   font-family: var(--font-body-medium);
 }
-.about-content-text h3 {
+.about-content-text h2 {
   color: var(--color-primary);
 }
 /* ------------------skills----------------- */
