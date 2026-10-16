@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
+
 <head>
-
     <!-- GoatCounter-->
-  <script data-goatcounter="https://erikaspetrauskas.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  <script data-goatcounter="https://erikaspetrauskas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
-<!-- Google tag (gtag.js) -->
-<!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-LF2RWTNF8B"></script>-->
-<!--<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-LF2RWTNF8B');
-</script>-->
+  <!-- Google tag (gtag.js) -->
+  <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-LF2RWTNF8B"></script>-->
+  <!--<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-LF2RWTNF8B');
+  </script>-->
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Erikas Petrauskas</title>
   <meta name="description" content="I modernise small businesses to attract more customers and look professional online.">
 
- <!-- <link rel="icon" type="image/x-icon" href="./images/favicon.ico">-->
-
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png"> <!--Might need to add / behind images when hosting real website, removed it earlier for github-->
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="manifest" href="/images/site.webmanifest">
 
-  <link rel="stylesheet" href="css/variables-v2.css">
-  <link rel="stylesheet" href="css/stylesheet-v2.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/about-me.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/fonts.css">
+
+  <!-- Scripts -->
+  <script src="js/scripts.js" defer></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -36,133 +44,21 @@
 
   <!-- AOS -->
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  
-  <!---------------------------------------- scripts ---------------------------------------->
-
-  <script>
-    // preloader 100% screen //
-document.addEventListener("DOMContentLoaded", () => {
-  let progress = 0;
-  const progressText = document.getElementById("progress-text");
-  const preloader = document.getElementById("preloader");
-
-  document.body.style.overflow = "hidden";
-
-  function updateProgress() {
-    if (progress < 100) {
-      progress += Math.floor(Math.random() * 11) + 8;
-      if (progress > 100) progress = 100;
-
-      progressText.textContent = progress + "%";
-
-      const delay = Math.floor(Math.random() * 200) + 20;
-      setTimeout(updateProgress, delay);
-    } else {
-      // Pause at 100% before sliding
-      setTimeout(() => {
-        preloader.classList.add("preloader-finish");
-
-        // Re-enable scrolling when preloader slides away
-        document.body.style.overflow = "auto";
-
-        setTimeout(() => {
-          preloader.style.display = "none";
-        }, 1000); // match CSS transition
-      }, 500); // pause time
-    }
-  }
-
-  updateProgress();
-});
-
-  
-   document.addEventListener("DOMContentLoaded", () => {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.about-content-text').forEach(el => {
-    observer.observe(el);
-  });
-});
-
-  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
-  }
-
-  window.addEventListener('load', () => {
-    const debugMarkers = false;
-
-    const tags = document.querySelectorAll('.skills .tag');
-    if (!tags.length) {
-      console.warn('GSAP: no elements found with selector ".skills .tag"');
-      return;
-    }
-
-    gsap.from(tags, {
-      scrollTrigger: {
-        trigger: ".skills",
-        start: "top 80%",
-        end: "bottom top",
-        toggleActions: "play none none none",
-        markers: debugMarkers
-      },
-      y: 40,
-      opacity: 0,
-      duration: 0.6,
-      stagger: 0.12,
-      ease: "power3.out"
-    });
-
-    gsap.from(".projects .projects-content", {
-      scrollTrigger: {
-        trigger: ".projects",
-        start: "top 75%",
-        toggleActions: "play none none none"
-      },
-      opacity: 0,
-      y: 60,
-      duration: 0.8,
-      stagger: 0.18,
-      ease: "power3.out"
-    });
-
-    gsap.from(".projects .projects-content-images img", {
-      scrollTrigger: {
-        trigger: ".projects",
-        start: "top 85%",
-        toggleActions: "play none none none"
-      },
-      opacity: 0,
-      scale: 0.98,
-      duration: 0.9,
-      stagger: 0.18,
-      ease: "power3.out"
-    });
-  });
-</script>
-
-
-
 </head>
+
 <body>
  
 
    <!-- Loading Screen -->
-<div id="preloader">
-  <div class="loader">
-    <span id="progress-text">0%</span>
+  <div id="preloader">
+    <div class="loader">
+      <span id="progress-text">0%</span>
+    </div>
   </div>
-</div>
-<div id="page-transition">
-  <div class="loading-text">Loading...</div>
-  <div class="loading-spinner"></div>
-</div>
+  <div id="page-transition">
+    <div class="loading-text">Loading...</div>
+    <div class="loading-spinner"></div>
+  </div>
 
 
   <!---------------------------------------- navbar ---------------------------------------->
@@ -188,556 +84,685 @@ document.addEventListener("DOMContentLoaded", () => {
       <a href="ErikasPetrauskasCVWebdev2026.pdf" target="_blank">CV</a>
     </div>
   </div>
-</nav>
+    </nav>
 
-    <!---------------------------------------- hero ---------------------------------------->
+          <!---------------------------------------- hero ---------------------------------------->
 
-     <main id="main-content">
-  <section class="hero grain">
-    <div class="hero-text">
-      <h1>Hi, I'm Erikas </h1>
-      <p>I'm a full-stack web developer who modernises small businesses to attract more customers and look professional online.</p>
+  <main id="main-content">
+        <section class="hero grain">
+          <div class="hero-text">
+            <h1>Hi, I'm Erikas</h1>
+            <p>I'm a full-stack web developer who modernises small businesses to attract more customers and look professional online.</p>
 
-    </div>
-  </section>
+          </div>
+        </section>
 
-    <!---------------------------------------- about me ---------------------------------------->
-
-
-<section id="about-me" class="about grain">
-
-    <div class="sticky-image">
-      <img src="./images/about-me.png" alt="about me">
-    </div>
-
-  <div class="about-content">
-    <div class="about-content-text slide-up">
-    <p> I create clean, user-friendly websites that help you stand out, build trust, and turn visitors into real clients.</p>
-    <br>
-    <p>I've been building websites for over 3 years, starting out in web design before moving into full-stack development. I've seen thousands of poor websites. I've also made some poor websites myself - but I've learnt what differentiates a website that cares about its users' experience from one that doesn't.</p>
-  </div>
-    <!--- <div class="about-content-text slide-up">
-    <p>I never thought I would become a web developer, but here I am now. I quickly grew a passion for
-       it and wanted to outsource my skills to small businesses.</p>
-  </div>-->
-
-  <div class="about-content-text slide-up">
-
-  <h2>SOME FACTS I'VE LEARNT</h2><br>
-
-<p>“88% of online consumers are less likely to return after a bad experience.” - <a href="https://baymard.com/learn/ux-statistics" target="_blank" style="color: var(--color-primary);">Baymard Institute</a></p><br>
-<p>“Mobile users are five times more likely to abandon a task if the website isn’t optimized for mobile.” - <a href="https://baymard.com/learn/ux-statistics" target="_blank" style="color: var(--color-primary);">Baymard Institute</a></p><br>
-<p>“75% of users admit to making judgments about a company’s credibility based on their website’s design.” - <a href="https://credibility.stanford.edu/guidelines/index.html" target="_blank" style="color: var(--color-primary);">Stanford Web Credibility Research</a></p>
+          <!---------------------------------------- about me ---------------------------------------->
 
 
-  </div>
-   <!--- <div class="about-content-text slide-up">
-    <p>I've decided that instead of just creating simple portfolios for myself, I should outsource my
-       skills and help businesses around the world.</p>
-  </div>-->
-  </div>
+      <section id="about-me" class="about grain">
 
-  <section class="skills">
-    <div class="skills-content">
+            <div class="sticky-image">
+              <img src="./images/about-me.png" alt="about me">
+            </div>
 
-<span class="tag item">HTML</span>
-<span class="tag item">CSS</span>
-<span class="tag item">JavaScript</span>
-<span class="tag item">Git</span>
-<span class="tag item">Node</span>
-<span class="tag item">Brevo</span>
-<span class="tag item">Stripe</span>
-<span class="tag item">Supabase</span>
-<span class="tag item">Sheets</span>
-<span class="tag item">GSAP</span>
-<span class="tag item">Printful</span>
-<span class="tag item">Figma</span>
+          <div class="about-content">
+                <div class="about-content-text slide-up">
+                <p> I create clean, user-friendly websites that help you stand out, build trust, and turn visitors into real clients.</p>
+                <br>
+                <p>I've been building websites for over 3 years, starting out in web design before moving into full-stack development. I've seen thousands of poor websites. I've also made some poor websites myself - but I've learnt what differentiates a website that cares about its users' experience from one that doesn't.</p>
+              </div>
+                <!--- <div class="about-content-text slide-up">
+                <p>I never thought I would become a web developer, but here I am now. I quickly grew a passion for
+                  it and wanted to outsource my skills to small businesses.</p>
+              </div>-->
+
+              <div class="about-content-text slide-up">
+
+              <h2>SOME FACTS I'VE LEARNT</h2><br>
+
+            <p>“88% of online consumers are less likely to return after a bad experience.” - <a href="https://baymard.com/learn/ux-statistics" target="_blank" style="color: var(--color-primary);">Baymard Institute</a></p><br>
+            <p>“Mobile users are five times more likely to abandon a task if the website isn’t optimized for mobile.” - <a href="https://baymard.com/learn/ux-statistics" target="_blank" style="color: var(--color-primary);">Baymard Institute</a></p><br>
+            <p>“75% of users admit to making judgments about a company’s credibility based on their website’s design.” - <a href="https://credibility.stanford.edu/guidelines/index.html" target="_blank" style="color: var(--color-primary);">Stanford Web Credibility Research</a></p>
 
 
-</div>
-  </section>
+              </div>
+              <!--- <div class="about-content-text slide-up">
+                <p>I've decided that instead of just creating simple portfolios for myself, I should outsource my
+                  skills and help businesses around the world.</p>
+              </div>-->
+          </div>
 
-  
+        <section class="skills">
+          <div class="skills-content">
+            <span class="tag item">HTML</span>
+            <span class="tag item">CSS</span>
+            <span class="tag item">JavaScript</span>
+            <span class="tag item">Git</span>
+            <span class="tag item">Node</span>
+            <span class="tag item">Brevo</span>
+            <span class="tag item">Stripe</span>
+            <span class="tag item">Supabase</span>
+            <span class="tag item">Sheets</span>
+            <span class="tag item">GSAP</span>
+            <span class="tag item">Printful</span>
+            <span class="tag item">Figma</span>
+          </div>
+        </section>
+      </section>
 
-</section>
+      <!---------------------------------------- Projects ---------------------------------------->
+      <section id="projects" class="projects grain">
 
-  <!---------------------------------------- Projects ---------------------------------------->
-  <section id="projects" class="projects grain">
+        <div class="sticky-image">
+          <img src="./images/projects.png" alt="projects">
+        </div>
 
-    <div class="sticky-image">
-      <img src="./images/projects.png" alt="projects">
-    </div>
+        <!--------------------- Green Solar --------------------->
+        <div class="projects-content project-greensolar">
+          <h2>Green Solar - Solar Panel Installation Company</h2>
 
-    <!--------------------- Green Solar ----------------->
+          <div class="project-showcase">
+            <div class="projects-content-images">
+              <img src="./images/greensolar.png" alt="green solar hero">
+            </div>
 
-    <div class="projects-content">
-      <h2>Green Solar - Solar Panel Installation</h2>
-         <p>A redesign of a solar installation website. Focuses on improving UI/UX while keeping the same functionality. supports multiple languages, functional quote calculator, solar calculator, and blog/projects pages powered by Google Sheets.  </p>
-    
+            <div class="project-showcase-text">
+              <p>A redesign focusing on improving UI/UX. Supports multiple languages, a quote calculator, a solar calculator, and blog/projects pages.</p>
+
+              <div class="project-tags">
+                <span class="tag item">HTML</span>
+                <span class="tag item">CSS</span>
+                <span class="tag item">JavaScript</span>
+                <span class="tag item">Google Sheets</span>
+              </div>
+
+              <div class="project-links">
+                <button class="project-toggle" aria-expanded="false" aria-controls="details-greensolar">
+                  <span class="label">Read more</span>
+                </button>
+
+                <a href="https://eika12345.github.io/greensolar.com/index.html" target="_blank" class="project-link" aria-label="view website">
+                  <img src="./images/link.png" alt="Live site link" class="icon link-image">
+                </a>
+
+                <a href="https://github.com/eika12345/greensolar.com" target="_blank" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+          
+
+          <div class="project-details" id="details-greensolar">
+            <div class="project-details-inner">
+
+              <div class="detail-block">
+                <h3>THE PROBLEM</h3>
+                <p>The original WordPress website had plenty of outdated features, inconsistent styling, and annoying AI chatbot popups (not needed on this type of website)</p>
+              </div>
+
+              <div class="detail-block">
+                <h3>WHAT I DID</h3>
+                <p>I rebuilt it as a static HTML site with no frameworks. I added new features like a functional solar calculator based on your region, an easily updatable blog via Google Sheets, and a language selector.</p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!--------------------- 90's Overhaul --------------------->
+        <div class="projects-content project-90s">
+          <h2>90's Overhaul - A Windows 98 styled portfolio (v3)</h2>
+
+          <div class="project-showcase">
+            <div class="projects-content-images">
+              <img src="./images/erikasportfolio98.jpg" alt="erikas 90s windows portfolio">
+            </div>
+
+            <div class="project-showcase-text">
+              <p>Windows 98 themed web dev portfolio.</p>
+
+              <div class="project-tags">
+                <span class="tag item">HTML</span>
+                <span class="tag item">CSS</span>
+                <span class="tag item">JavaScript</span>
+              </div>
+
+              <div class="project-links">
+                <button class="project-toggle" aria-expanded="false" aria-controls="details-90s">
+                  <span class="label">Read more</span>
+                </button>           
+
+                <a href="https://eika12345.github.io/windows-98/" target="_blank" class="project-link" aria-label="view website">
+                  <img src="./images/link.png" alt="Live site link" class="icon link-image">
+                </a>
+
+                <a href="https://github.com/eika12345/windows-98" target="_blank" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+
+          <div class="project-details" id="details-90s">
+            <div class="project-details-inner">
+
+              <div class="detail-block">
+                <h3>FEATURES</h3>
+                <p>Movable and stackable windows, minimising and maximising, folder system, start menu, and a taskbar. Works on mobile.</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+<!--------------------- Eika's Den --------------------->
+<div class="projects-content project-eikasden">
+  <h2>Eika's Den - An online fashion store</h2>
+
+  <div class="project-showcase">
     <div class="projects-content-images">
-    <img src="./images/greensolar.png" alt="green solar hero">
+      <img src="./images/eikasden1.png" alt="eikas den">
     </div>
 
-      <a href="https://eika12345.github.io/greensolar.com/index.html" target="_blank" class="project-link" aria-label="view website">
-        <img src="./images/link.png" alt="Live site link" class="icon link-image">
-      </a>
+    <div class="project-showcase-text">
+      <p>My brutalist style e-commerce website, inspired by <a href="https://golflefleur.com/" target="_blank">Golf Le Fleur</a>.</p>
 
-      <a href="https://github.com/eika12345/greensolar.com" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
-    </div>
-
-  <!--------------------- 90's overhaul ----------------->
-
-    <div class="projects-content">
-      <h2>90's Overhaul - A Windows 98 styled portfolio (v3)</h2>
-         <p>I aimed to create a portfolio website in the style of a Windows 98 Desktop. I included many small true to life features like moving/stacking windows, minimising/maximising windows, a functional start menu, and more.</p>
-    
-    <div class="projects-content-images">
-    <img src="./images/erikasportfolio98.jpg" alt="erikas 90s windows portfolio">
-    </div>
-
-      <a href="https://eika12345.github.io/windows-98/" target="_blank" class="project-link" aria-label="view website">
-        <img src="./images/link.png" alt="Live site link" class="icon link-image">
-      </a>
-
-      <a href="https://github.com/eika12345/windows-98" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
-    </div>
-  <!--------------------- eikas den ----------------->
-
-    <div class="projects-content">
-      <h2>Eika's Den - An online fashion store</h2>
-      <p>Eika's Den is my attempt of making an e-commerce website. I went for a brutalist/minimalistic style, taking inspiration from
-<a href="https://golflefleur.com/" target="_blank" style="color: var(--color-primary);">Golf Le Fleur.</a></p>
-    <div class="projects-content-images">
-    <img src="./images/eikasden1.png" alt="eikas den">
-    </div>
-
-     <a href="https://github.com/eika12345/Eikas-Den" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="View on GitHub" class="icon link-image">
-      </a>
-
-      
-
-    </div>
-    <!--------------------- right removals----------------->
-
-    <div class="projects-content">
-      <h2>Moving Company Re-design</h2>
-      <p>A modern re-design of <a href="https://right-removals.co.uk/" target="_blank" style="color: var(--color-primary);">Right Removals.</a> Aims to keep as much of the same content as possible, while fixing many of the UI/UX problems found. Features quote and admin pages powered by Supabase,
-       a Google reviews component powered by Elfsight, and a contact form powered by Web3forms. </p>
-    <div class="projects-content-images">
-    <img src="./images/rightremovals.png" alt="right removals">
-    </div>
-
-     <a href="https://eika12345.github.io/Right-Removals-Redesign/" target="_blank" class="project-link" aria-label="View website">
-        <img src="./images/link.png" alt="Live site link" class="icon link-image">
-      </a>
-
-      <a href="https://github.com/eika12345/Right-Removals-Redesign" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
-      
-
-    </div>
-    <!--------------------- table tennis club ----------------->
-
-    <div class="projects-content">
-      <h2>Table Tennis Club homepage</h2>
-      <p>A home page mock-up redesign of <a href="https://clissoldttc.co.uk/" target="_blank" style="color: var(--color-primary);">Clissold Table Tennis Club</a>, using modern techniques to improve cohesion and usability.</p>
-    <div class="projects-content-images">
-    <img src="./images/tabletennisclub.png" alt="table tennis club">  
-    </div>
-
-     <a href="https://eika12345.github.io/Table-Tennis-Club/" target="_blank" class="project-link" aria-label="View website">
-        <img src="./images/link.png" alt="Live site link" class="icon link-image">
-      </a>
-
-      <a href="https://github.com/eika12345/Table-Tennis-Club" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
-    </div>
-
-    <!--------------------- blog new ----------------->
-
-    <div class="projects-content">
-      <h2>Eika's Corner - My blog v2</h2>
-      <p>A personal website featuring a blog, a guestbook powered by Supabase, and a gallery page. (Currently still being updated). </p>
-    <div class="projects-content-final-images">
-    <img src="./images/eikascornerv2.png" alt="eikas corner">
-    </div>
-
-      <a href="https://eikascorner.neocities.org/" target="_blank" class="project-link" aria-label="View website">
-        <img src="./images/link.png" alt="Live site link" class="icon link-image">
-      </a>
-
-      <a href="https://github.com/eika12345/eikas-corner" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
-    </div>
-
-    <!--------------------- blog ----------------->
-
-    <div class="projects-content">
-      <h2>Eika's Corner - My blog</h2>
-      <p>Windows 98 themed blog, </p>
-    <div class="projects-content-final-images">
-    <img src="./images/eikascorner.png" alt="eikas corner">
-    </div>
-
-      <a href="https://eika12345.github.io/eikascorner-old/" target="_blank" class="project-link" aria-label="View website">
-        <img src="./images/link.png" alt="Live site link" class="icon link-image">
-      </a>
-
-      <a href="https://github.com/eika12345/eikascorner-old" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
-    </div>
-    
-  <!--------------------- old portfolio ----------------->
-
-    <div class="projects-content">
-      <h2>Late 90's web themed portfolio (v2)</h2>
-      <p>Erikas Petrauskas (.com) was my first real portfolio. Heavily inspired by the DIY web aesthetics used in the 1990's and early 2000's. I created it more out of passion for the style rather than some ultra-refined piece of work. Looking back, I used it as my first stepping stone into the massive world of web development. </p>
-    <div class="projects-content-images">
-    <img src="./images/erikasportfolio1.png" alt="erikas portfolio old">
-    </div>
-    
-      <a href="https://github.com/eika12345/Late-90s-Web-Portfolio" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
+      <div class="project-tags">
+        <span class="tag item">HTML</span>
+        <span class="tag item">CSS</span>
+        <span class="tag item">JavaScript</span>
+        <span class="tag item">Stripe</span>
+        <span class="tag item">Printful</span>
       </div>
-      
-  <!--------------------- even older portfolio ----------------->
 
-    <div class="projects-content-final">
-      <h2>Modern Portfolio website (v1)</h2>
-      <p>This is another portfolio website I created, heavily focused on animation and sleek aesthetics. I quickly switched from this, as I thought it was too bland and simply lacked any expression.</p>
-    <div class="projects-content-final-images">
-    <img src="./images/website1.png" alt="erikas portfolio oldest">
+      <div class="project-links">
+        <button class="project-toggle" aria-expanded="false" aria-controls="details-eikasden">
+          <span class="label">Read more</span>
+        </button>
+
+        <a href="https://github.com/eika12345/Eikas-Den" target="_blank" class="project-link" aria-label="View on GitHub">
+          <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+        </a>
+      </div>
     </div>
-
-      <a href="https://github.com/eika12345/Portfolio-v1-OLD" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
-    </div>
-
-    
-  <!--------------------- no name rp ----------------
-
-    <div class="projects-content">
-      <h2>FiveM Roleplay Community & Service Hub</h2>
-      <p>This was a client website made for a   GTA V FiveM Server. It featured a store, where you could buy properties and vehicles, a contact form and a forum for the community. </p>
-    <div class="projects-content-images">
-    <img src="./images/nonamerppage1.png" alt="no name rp">
-    </div>
-
-    <a href="https://your-live-project.com" target="_blank" class="project-link" aria-label="View Live Project">
-        <img src="./images/link.png" alt="Live site link" class="icon link-image">
-      </a>
-
-      <a href="https://github.com/yourusername/your-repo" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-
-    </div>-->
-
-    <!--------------------- email form ----------------->
-
-    <!--<div class="projects-content-final">
-      <h2>Email Subscription Form / Modern "Coming soon" Page</h2>
-      <p>Powered by Brevo CRM, the page is responsive for both desktop and mobile. </p>
-    <div class="projects-content-final-images">
-    <img src="./images/emailform1.png" alt="no name rp">
-    </div>
-
-
-      <a href="https://github.com/eika12345/email-subscription-form" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image">
-      </a>
-      
-    </div>-->
-
-</section>
-
-
-  <!---------------------------------------- components --------------------------------------->
-
-  <section id="components" class="components grain">
-
-  <div class="sticky-image">
-    <img src="./images/components.png" alt="components">
   </div>
 
-  <h2>(in progress)</h2>
+  <div class="project-details" id="details-eikasden">
+    <div class="project-details-inner">
 
+      <div class="detail-block">
+        <h3>FEATURES</h3>
+        <p>Fully working cart system, catalog for different types of clothing, and a secure, integrated checkout system.</p>
+      </div>
 
-  <!-- Components Grid -->
-  <div class="components-grid">
+      <div class="detail-block">
+        <h3>HOW IT WORKS</h3>
+        <p>All products are sourced by Printful POD (Print on Demand), with a payment gateway powered by Stripe. After purchase, everything is crafted and delivered by Printful.</p>
+      </div>
 
-    <!-- Component 1 -->
-    <div class="component-card">
-      <img src="./images/emailform1.png" alt="Email Form Component">
-      <h3>Email Subscription Form</h3>
-      <p>A modern “Coming Soon” page powered by Brevo CRM, with responsive design and integrated email signup.</p>
-
-        <a href="https://github.com/eika12345/email-subscription-form" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image" style="border: 0;">
-        </a>
     </div>
-
-    <!-- Component 2 -->
-    <div class="component-card">
-      <img src="./images/events.png" alt="Events Page">
-      <h3>Events Page</h3>
-      <p>Dynamic events page powered by a live Google Sheet feed.</p>
-
-      <a href="https://github.com/eika12345/events-page" target="_blank" class="project-link" aria-label="View on GitHub">
-        <img src="./images/github.png" alt="GitHub link" class="icon github-image" style="border: 0;">
-        </a>
-    </div>
-
-    <!-- Component 3 
-    <div class="component-card">
-      <img src="./images/emailform1.png" alt="Toast Notification">
-      <h3>Animated Toast Notification</h3>
-      <p>A reusable success/error toast system that smoothly fades in/out, used in my contact form.</p>
-      <a href="https://github.com/eika12345" target="_blank" class="component-link">
-        <img src="./images/github.png" alt="GitHub link">
-      </a>
-    </div>-->
-
   </div>
-
-</section>
-  <!---------------------------------------- contact --------------------------------------->
-<section id="contact" class="contact grain">
-
-  <div class="sticky-image">
-      <img src="./images/contact.png" alt="contact img">
-    </div>
-
-    <div class="contact-image">
-    <a href="https://github.com/eika12345" target="_blank">
-      <img src="./images/github.png" alt="github"></a>
-
-    <a href="mailto:webdev@erikaspetrauskas.com" target="_blank">
-      <img src="./images/mail.png" alt="email"></a>
-
-    <a href="https://www.upwork.com/freelancers/~01c82500ffd4c0a535?viewMode=1" target="_blank">
-      <img src="./images/upwork.png" alt="upwork"></a>
-
-    <a href="https://www.instagram.com/erikas.2005/" target="_blank">
-      <img src="./images/instagram.png" alt="instagram"></a>
-
-    </div>
-  <form id="contact-form" action="https://formspree.io/f/xovkkwpw" method="POST">
-    <div class="form-group">
-      <!--honey pot field -->
-       <div class="hp-wrapper" aria-hidden="true" style="position: absolute; left: -9999px; top: -9999px; overflow: hidden; height: 1px; width: 1px;">
-       <label for="website" style="display:none;">Website</label>
-       <input id="website" name="website" type="text" autocomplete="off" tabindex="-1" />
 </div>
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+<!--------------------- Right Removals --------------------->
+<div class="projects-content project-rightremovals">
+  <h2>Moving Company Re-design</h2>
+
+  <div class="project-showcase">
+    <div class="projects-content-images">
+      <img src="./images/rightremovals.png" alt="right removals">
     </div>
 
-    <div class="form-group">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="_replyto" placeholder="Your email" required>
+    <div class="project-showcase-text">
+      <p>A modern re-design, giving the website a more modern look.</p>
+
+      <div class="project-tags">
+        <span class="tag item">HTML</span>
+        <span class="tag item">CSS</span>
+        <span class="tag item">JavaScript</span>
+        <span class="tag item">Supabase</span>
+        <span class="tag item">Elfsight</span>
+        <span class="tag item">Web3Forms</span>
+      </div>
+
+      <div class="project-links">
+        <button class="project-toggle" aria-expanded="false" aria-controls="details-rightremovals">
+          <span class="label">Read more</span>
+        </button>
+
+        <a href="https://eika12345.github.io/Right-Removals-Redesign/" target="_blank" class="project-link" aria-label="View website">
+          <img src="./images/link.png" alt="Live site link" class="icon link-image">
+        </a>
+
+        <a href="https://github.com/eika12345/Right-Removals-Redesign" target="_blank" class="project-link" aria-label="View on GitHub">
+          <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+        </a>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
-    </div>
-    
-
-    <button type="submit" class="submit-btn">Send Message</button>
-  </form>
-
-  <div class="circle-image">
-  <img src="./images/mountaincircle.png" alt="me on mountain">
   </div>
 
-</section>
-  <!---------------------------------------- footer --------------------------------------->
-<footer id="footer" class="footer">
-  <div class="footer-container">
-    <p>Made by Erikas Petrauskas. Contact form powered by <a href="https://formspree.io/" target="_blank" style="color: var(--color-primary);">Formspree</a></p>
-    <div class="footer-links">
-      <a href="#projects">PROJECTS</a>
-      <a href="#contact">CONTACT</a>
-      <a href="https://github.com/eika12345" target="_blank">GITHUB</a>
-      <a href="https://eikascorner.neocities.org/" target="_blank">EIKA'S CORNER</a>
-      <a href="privacy.html">PRIVACY</a>
-      <a href="ErikasPetrauskasCVWebdev2026.pdf" target="_blank">CV</a>
+  <div class="project-details" id="details-rightremovals">
+    <div class="project-details-inner">
+
+      <div class="detail-block">
+        <h3>THE PROBLEM</h3>
+        <p>Just about everything was outdated, there were many redundant duplicate pages that served little purpose. The quote page was simply a contact form, and had no calculation etc.</p>
+      </div>
+
+      <div class="detail-block">
+        <h3>WHAT I DID</h3>
+        <p>Re-wrote everything from scratch, aiming to make the website more interactive and usable. Upscaled their logo, created an admin page powered by Supabase, allowing the host to quickly see any quote forms.</p><br>
+        <p>Also added a dynamic Google reviews widget, replacing the original hard coded static one.</p>
+      </div>
+
     </div>
   </div>
-</footer>
+</div>
+
+<!--------------------- Table Tennis Club --------------------->
+<div class="projects-content project-tabletennis">
+  <h2>Table Tennis Club homepage</h2>
+
+  <div class="project-showcase">
+    <div class="projects-content-images">
+      <img src="./images/tabletennisclub.png" alt="table tennis club">
+    </div>
+
+    <div class="project-showcase-text">
+      <p>A home page mock-up what a table tennis club's website would look like.</p>
+
+      <div class="project-tags">
+        <span class="tag item">HTML</span>
+        <span class="tag item">CSS</span>
+        <span class="tag item">JavaScript</span>
+      </div>
+
+      <div class="project-links">
+        <button class="project-toggle" aria-expanded="false" aria-controls="details-tabletennis">
+          <span class="label">Read more</span>
+        </button>
+
+        <a href="https://eika12345.github.io/Table-Tennis-Club/" target="_blank" class="project-link" aria-label="View website">
+          <img src="./images/link.png" alt="Live site link" class="icon link-image">
+        </a>
+
+        <a href="https://github.com/eika12345/Table-Tennis-Club" target="_blank" class="project-link" aria-label="View on GitHub">
+          <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-details" id="details-tabletennis">
+    <div class="project-details-inner">
+
+      <div class="detail-block">
+        <h3>FEATURES</h3>
+        <p>A simple home page featuring a CTA (Call To Action) button, a small gallery and description, and a Google Maps location widget.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--------------------- Eika's Corner v2 --------------------->
+<div class="projects-content project-corner-v2">
+  <h2>Eika's Corner - My blog v2</h2>
+
+  <div class="project-showcase">
+    <div class="projects-content-images">
+      <img src="./images/eikascornerv2.png" alt="eikas corner">
+    </div>
+
+    <div class="project-showcase-text">
+      <p>My own personal/blog website.</p>
+
+      <div class="project-tags">
+        <span class="tag item">HTML</span>
+        <span class="tag item">CSS</span>
+        <span class="tag item">JavaScript</span>
+        <span class="tag item">Supabase</span>
+      </div>
+
+      <div class="project-links">
+        <button class="project-toggle" aria-expanded="false" aria-controls="details-corner-v2">
+          <span class="label">Read more</span>
+        </button>
+
+        <a href="https://eikascorner.neocities.org/" target="_blank" class="project-link" aria-label="View website">
+          <img src="./images/link.png" alt="Live site link" class="icon link-image">
+        </a>
+
+        <a href="https://github.com/eika12345/eikas-corner" target="_blank" class="project-link" aria-label="View on GitHub">
+          <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-details" id="details-corner-v2">
+    <div class="project-details-inner">
+
+      <div class="detail-block">
+        <h3>FEATURES</h3>
+        <p>I originally intended this to be a blog, but I kept adding features like a landing page, gallery page, guestbook (powered by Supabase), and more. Check it out!</p>
+      </div>
+
+      
+
+    </div>
+  </div>
+</div>
+
+<!--------------------- Eika's Corner (old) --------------------->
+<div class="projects-content project-corner-old">
+  <h2>Eika's Corner - My blog</h2>
+
+  <div class="project-showcase">
+    <div class="projects-content-images">
+      <img src="./images/eikascorner.png" alt="eikas corner">
+    </div>
+
+    <div class="project-showcase-text">
+      <p>My first blog, themed around Windows 98.</p>
+
+      <div class="project-tags">
+        <span class="tag item">HTML</span>
+        <span class="tag item">CSS</span>
+        <span class="tag item">JavaScript</span>
+        <span class="tag item">Supabase</span>
+      </div>
+
+      <div class="project-links">
+        <button class="project-toggle" aria-expanded="false" aria-controls="details-corner-old">
+          <span class="label">Read more</span>
+        </button>
+
+        <a href="https://eika12345.github.io/eikascorner-old/" target="_blank" class="project-link" aria-label="View website">
+          <img src="./images/link.png" alt="Live site link" class="icon link-image">
+        </a>
+
+        <a href="https://github.com/eika12345/eikascorner-old" target="_blank" class="project-link" aria-label="View on GitHub">
+          <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-details" id="details-corner-old">
+    <div class="project-details-inner">
+
+      <div class="detail-block">
+        <h3>The idea</h3>
+        <p>Very similar to Eika's Corner - My blog v2, just in the style of Windows 98.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--------------------- Portfolio v2 --------------------->
+<div class="projects-content project-portfolio-v2" style="margin-bottom: 70px;">
+  <h2>Late 90's web themed portfolio (v2)</h2>
+
+  <div class="project-showcase">
+    <div class="projects-content-images">
+      <img src="./images/erikasportfolio1.png" alt="erikas portfolio old">
+    </div>
+
+    <div class="project-showcase-text">
+      <p>My first real portfolio, inspired by the DIY web aesthetics of the 1990s and early 2000s.</p>
+
+      <div class="project-tags">
+        <span class="tag item">HTML</span>
+        <span class="tag item">CSS</span>
+        <span class="tag item">JavaScript</span>
+      </div>
+
+      <div class="project-links">
+        <button class="project-toggle" aria-expanded="false" aria-controls="details-portfolio-v2">
+          <span class="label">Read more</span>
+        </button>
+
+        <a href="https://github.com/eika12345/Late-90s-Web-Portfolio" target="_blank" class="project-link" aria-label="View on GitHub">
+          <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-details" id="details-portfolio-v2">
+    <div class="project-details-inner">
+
+      <div class="detail-block">
+        <h3>THE IDEA</h3>
+        <p>During this time in my webdev career, I really enjoyed making old school web/windows themed websites. This one, is one long scrollable page showing my interests, a small gallery and a portfolio section.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!--------------------- Portfolio v1 -------------------
+<div class="projects-content project-portfolio-v1">
+  <h2>Modern Portfolio website (v1)</h2>
+
+  <div class="project-showcase">
+    <div class="projects-content-images">
+      <img src="./images/website1.png" alt="erikas portfolio oldest">
+    </div>
+
+    <div class="project-showcase-text">
+      <p>Another portfolio, heavily focused on animation and sleek aesthetics. I moved on from it because I found it too bland and lacking expression.</p>
+
+      <div class="project-tags">
+        <span class="tag item">HTML</span>
+        <span class="tag item">CSS</span>
+        <span class="tag item">JavaScript</span>
+      </div>
+
+      <div class="project-links">
+        <button class="project-toggle" aria-expanded="false" aria-controls="details-portfolio-v1">
+          <span class="label">Read more</span>
+        </button>
+
+        <a href="https://github.com/eika12345/Portfolio-v1-OLD" target="_blank" class="project-link" aria-label="View on GitHub">
+          <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-details" id="details-portfolio-v1">
+    <div class="project-details-inner">
+
+      <div class="detail-block">
+        <h3>The idea</h3>
+        <p>[What you wanted this first portfolio to achieve.]</p>
+      </div>
+
+      <div class="detail-block">
+        <h3>What I did</h3>
+        <p>[Which animations and design choices you focused on.]</p>
+      </div>
+
+      <div class="detail-block">
+        <h3>What I learned</h3>
+        <p>[Why you felt it lacked expression, and how that shaped your later work.]</p>
+      </div>
+
+    </div>
+  </div>
+</div>-->
+
+          
+          <!--------------------- no name rp ----------------
+
+          <div class="projects-content">
+            <h2>FiveM Roleplay Community & Service Hub</h2>
+            <p>This was a client website made for a   GTA V FiveM Server. It featured a store, where you could buy properties and vehicles, a contact form and a forum for the community. </p>
+          <div class="projects-content-images">
+          <img src="./images/nonamerppage1.png" alt="no name rp">
+          </div>
+
+          <a href="https://your-live-project.com" target="_blank" class="project-link" aria-label="View Live Project">
+              <img src="./images/link.png" alt="Live site link" class="icon link-image">
+            </a>
+
+            <a href="https://github.com/yourusername/your-repo" target="_blank" class="project-link" aria-label="View on GitHub">
+              <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+            </a>
+
+          </div>-->
+
+          <!--------------------- email form ----------------->
+
+          <!--<div class="projects-content-final">
+            <h2>Email Subscription Form / Modern "Coming soon" Page</h2>
+            <p>Powered by Brevo CRM, the page is responsive for both desktop and mobile. </p>
+          <div class="projects-content-final-images">
+          <img src="./images/emailform1.png" alt="no name rp">
+          </div>
+
+
+            <a href="https://github.com/eika12345/email-subscription-form" target="_blank" class="project-link" aria-label="View on GitHub">
+              <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+            </a>
+            
+          </div>-->
+
+        </section>
+
+
+        <!---------------------------------------- components --------------------------------------->
+
+        <section id="components" class="components grain">
+
+        <div class="sticky-image">
+          <img src="./images/components.png" alt="components">
+        </div>
+
+        <h2>(in progress)</h2>
+
+
+        <!-- Components Grid -->
+        <div class="components-grid">
+
+          <!-- Component 1 -->
+          <div class="component-card">
+            <img src="./images/emailform1.png" alt="Email Form Component">
+            <h3>Email Subscription Form</h3>
+            <p>A modern “Coming Soon” page powered by Brevo CRM, with responsive design and integrated email signup.</p>
+
+              <a href="https://github.com/eika12345/email-subscription-form" target="_blank" class="project-link" aria-label="View on GitHub">
+              <img src="./images/github.png" alt="GitHub link" class="icon github-image" style="border: 0;">
+              </a>
+          </div>
+
+          <!-- Component 2 -->
+          <div class="component-card">
+            <img src="./images/events.png" alt="Events Page">
+            <h3>Events Page</h3>
+            <p>Dynamic events page powered by a live Google Sheet feed.</p>
+
+            <a href="https://github.com/eika12345/events-page" target="_blank" class="project-link" aria-label="View on GitHub">
+              <img src="./images/github.png" alt="GitHub link" class="icon github-image" style="border: 0;">
+              </a>
+          </div>
+
+          <!-- Component 3 
+          <div class="component-card">
+            <img src="./images/emailform1.png" alt="Toast Notification">
+            <h3>Animated Toast Notification</h3>
+            <p>A reusable success/error toast system that smoothly fades in/out, used in my contact form.</p>
+            <a href="https://github.com/eika12345" target="_blank" class="component-link">
+              <img src="./images/github.png" alt="GitHub link">
+            </a>
+          </div>-->
+
+        </div>
+
+      </section>
+        <!---------------------------------------- contact --------------------------------------->
+      <section id="contact" class="contact grain">
+
+        <div class="sticky-image">
+            <img src="./images/contact.png" alt="contact img">
+          </div>
+
+          <div class="contact-image">
+          <a href="https://github.com/eika12345" target="_blank">
+            <img src="./images/github.png" alt="github"></a>
+
+          <a href="mailto:webdev@erikaspetrauskas.com" target="_blank">
+            <img src="./images/mail.png" alt="email"></a>
+
+          <a href="https://www.upwork.com/freelancers/~01c82500ffd4c0a535?viewMode=1" target="_blank">
+            <img src="./images/upwork.png" alt="upwork"></a>
+
+          <a href="https://www.instagram.com/erikas.2005/" target="_blank">
+            <img src="./images/instagram.png" alt="instagram"></a>
+
+          </div>
+        <form id="contact-form" action="https://formspree.io/f/xovkkwpw" method="POST">
+          <div class="form-group">
+            <!--honey pot field -->
+            <div class="hp-wrapper" aria-hidden="true">
+            <label for="website" style="display:none;">Website</label>
+            <input id="website" name="website" type="text" autocomplete="off" tabindex="-1" />
+          </div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" placeholder="Your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message" required></textarea>
+          </div>
+          
+
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+
+        <div class="circle-image">
+        <img src="./images/mountaincircle.png" alt="me on mountain">
+        </div>
+
+      </section>
+
+      <!---------------------------------------- footer --------------------------------------->
+      <footer id="footer" class="footer">
+        <div class="footer-container">
+          <p>Made by Erikas Petrauskas. Contact form powered by <a href="https://formspree.io/" target="_blank" style="color: var(--color-primary);">Formspree</a></p>
+          <div class="footer-links">
+            <a href="#projects">PROJECTS</a>
+            <a href="#contact">CONTACT</a>
+            <a href="https://github.com/eika12345" target="_blank">GITHUB</a>
+            <a href="https://eikascorner.neocities.org/" target="_blank">EIKA'S CORNER</a>
+            <a href="privacy.html">PRIVACY</a>
+            <a href="ErikasPetrauskasCVWebdev2026.pdf" target="_blank">CV</a>
+          </div>
+        </div>
+      </footer>
+
   </main>
 
   <div id="form-toast" class="form-toast hidden">
   <p id="form-toast-text"></p>
-</div>
+  </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
+  
 
-     AOS.init({ duration: 800, once: true });
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Formspree (contact form)
-   // Toast-based Formspree handler
-  document.getElementById('contact-form').addEventListener('submit', async function (e) {
-  e.preventDefault();
-  const form = e.target;
-  const toast = document.getElementById('form-toast');
-  const toastText = document.getElementById('form-toast-text');
-
-  function showToast(message, type = 'success', duration = 3000) {
-    toastText.textContent = message;
-    toast.classList.remove('hidden', 'success', 'error');
-    toast.classList.add(type);
-    requestAnimationFrame(() => toast.classList.add('show'));
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => toast.classList.add('hidden'), 500);
-    }, duration);
-  }
-
-  try {
-    const response = await fetch(form.action, {
-      method: form.method,
-      body: new FormData(form),
-      headers: { Accept: 'application/json' },
-    });
-
-    if (response.ok) {
-      showToast('Message sent successfully!', 'success');
-      form.reset();
-    } else {
-      showToast('Oops! Something went wrong.', 'error');
-    }
-  } catch (error) {
-    showToast('Network error. Please try again later.', 'error');
-  }
-});
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navLinks = document.querySelector(".nav-links");
-    const pageTransition = document.getElementById("page-transition");
-    const allNavLinks = navLinks.querySelectorAll("a");
-    const logoLink = document.querySelector(".navbar .logo-img").parentElement;
-
-    //  NEW: Footer links
-    const footerLinks = document.querySelectorAll(".footer-links a");
-
-    // Toggle mobile menu
-    menuToggle.addEventListener("click", () => {
-      menuToggle.classList.toggle("active");
-      navLinks.classList.toggle("open");
-    });
-
-    // Close mobile menu when clicking/tapping outside of it
-    document.addEventListener("click", (e) => {
-      const isOpen = navLinks.classList.contains("open");
-      const clickedInsideMenu = navLinks.contains(e.target);
-      const clickedToggle = menuToggle.contains(e.target);
-
-      if (isOpen && !clickedInsideMenu && !clickedToggle) {
-        menuToggle.classList.remove("active");
-        navLinks.classList.remove("open");
-      }
-    });
-
-    // Overlay page transition handler
-    function handleTransition(href) {
-      pageTransition.classList.add("active");
-
-      // Scroll while covered by transition
-      setTimeout(() => {
-        const targetSection = document.querySelector(href);
-        if (targetSection) {
-          targetSection.scrollIntoView({ behavior: "smooth" }); // smooth scroll
-        }
-      }, 300);
-
-      // Slide out after animation
-      setTimeout(() => {
-        pageTransition.classList.add("exit");
-
-        // Remove after animation completes
-        setTimeout(() => {
-          pageTransition.classList.remove("active", "exit");
-        }, 600);
-      }, 600);
-    }
-
-    // Navbar link clicks
-    allNavLinks.forEach(link => {
-      link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href");
-
-        if (href.startsWith("#")) {
-          e.preventDefault();
-          menuToggle.classList.remove("active");
-          navLinks.classList.remove("open");
-          handleTransition(href);
-        }
-      });
-    });
-
-    // ✅ Footer link clicks (NEW)
-    footerLinks.forEach(link => {
-      link.addEventListener("click", (e) => {
-        const href = link.getAttribute("href");
-
-        if (href.startsWith("#")) {
-          e.preventDefault();
-          handleTransition(href);
-        }
-      });
-    });
-
-    // Logo click — scroll to top with transition
-    logoLink.addEventListener("click", (e) => {
-      e.preventDefault();
-
-      menuToggle.classList.remove("active");
-      navLinks.classList.remove("open");
-
-      pageTransition.classList.add("active");
-
-      setTimeout(() => {
-        window.scrollTo({ top: 0, behavior: "instant" });
-      }, 300);
-
-      setTimeout(() => {
-        pageTransition.classList.add("exit");
-
-        setTimeout(() => {
-          pageTransition.classList.remove("active", "exit");
-        }, 600);
-      }, 600);
-    });
-  });
-
- window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
-  </script>
 </body>
 </html>

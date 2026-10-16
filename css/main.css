@@ -1,0 +1,201 @@
+@font-face {
+  font-family: "NeueMontreal-Bold";
+  src: url("../fonts/NeueMontreal-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "NeueMontreal-Medium";
+  src: url("../fonts/NeueMontreal-Medium.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Reset / Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+}
+/*loading screen*/
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-background-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: var(--color-primary);
+  transition: transform 1s ease;    
+}
+
+#progress-text {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.preloader-finish {
+  transform: translateY(-100%);
+}
+
+@keyframes zoomOut {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(1.2); opacity: 0; }
+}
+
+#main-content {
+  scroll-behavior: smooth;     
+  pointer-events: all; 
+}
+
+/*-----------------------------------------------------------------body---------------------------------------------------------------------------*/
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/*----------------------------------------------hero-----------------------------------------------*/
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-color: var(--color-background);
+  padding: var(--spacing-xl) var(--spacing-md);
+  color: var(--color-white);
+  z-index: 0;
+}
+.hero-text p {
+  font-family: var(--font-body-medium);
+}
+
+/*----------------------------------------------grain overlay-----------------------------------------------*/
+
+/*.grain {
+  position: relative;
+  overflow: hidden;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: repeating-conic-gradient(
+    rgba(255,255,255,0.05) 0% 10%, 
+    rgba(0,0,0,0.05) 10% 20%
+  );
+  background-size: 3px 3px;
+  z-index: 1;
+  animation: grainMove 10s linear infinite;
+}
+
+@keyframes grainMove {
+  0% { background-position: 0 0; }
+  100% { background-position: 100px 100px; }
+}
+
+.hero-text,
+.hero-animation {
+  position: relative;
+  z-index: 2;
+}*/
+
+/*----------------------------------------------gsap scroll-----------------------------------------------*/
+.scroll-section {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* Page Transition Overlay */
+#page-transition {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--color-background-dark);
+  z-index: 9998;
+  transition: left 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#page-transition.active {
+  left: 0;
+}
+.sticky-image img {
+  transform-origin: top center;
+  z-index: 100;
+}
+/* Loading Text */
+#page-transition .loading-text {
+  color: var(--color-primary);
+  font-size: 1.5rem;
+  font-family: var(--font-body);
+}
+
+/* Loading Spinner */
+#page-transition .loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--color-primary);
+  border-top-color: var(--color-background-dark);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+#page-transition::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: repeating-conic-gradient(
+    rgba(255,255,255,0.05) 0% 10%, 
+    rgba(0,0,0,0.05) 10% 20%
+  );
+  background-size: 3px 3px;
+  animation: grainMove 10s linear infinite;
+}
+
+
+
+

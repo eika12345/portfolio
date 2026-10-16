@@ -1,0 +1,157 @@
+#contact {
+    color: var(--color-white);
+      overflow: visible; /* allows sticky to work */
+  }
+
+  #contact h3 {
+    margin-bottom: 30px;
+  }
+
+  #contact form {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 50px 20px 100px 20px;
+
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--color-white);
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--color-white);
+    border-radius: 8px;
+    background-color: transparent;
+    color: var(--color-white);
+    font-family: var(--font-body-medium);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+  }
+
+  .submit-btn {
+    background-color: var(--color-white);
+    color: var(--color-background);
+    font-family: var(--font-body-medium);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .submit-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .contact-image {
+    text-align: center;
+    text-decoration: none;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .contact-image img {
+  width: 30px;
+  margin: 10px;
+  margin-top: 50px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease, opacity 0.2s ease, filter 0.3s ease;
+}
+
+.contact-image img:hover {
+  transform: translateY(-2px);
+  filter: invert(80%) sepia(30%) saturate(300%) hue-rotate(150deg) brightness(1.2);
+}
+
+  .circle-image {
+    text-align: center;
+    padding: 50px;
+    padding-bottom: 120px;
+  }
+  .circle-image img {
+    max-width: 350px;
+    border-radius: 50%;
+    border: 2px solid var(--color-white);
+  }
+  @media (max-width: 768px) {
+    .circle-image {
+      padding: 20px;
+      padding-bottom: 100px;
+
+    }
+    .circle-image img {
+      max-width: 60%;
+    }
+  }
+
+  /*----------------------honeypot-------------------------*/
+  .form-toast {
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: var(--color-background-dark);
+  color: var(--color-white);
+  border: 2px solid var(--color-primary);
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-family: var(--font-body-medium);
+  font-size: 1rem;
+  opacity: 0;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease;
+  z-index: 9999;
+  text-align: center;
+}
+
+/* Visible state */
+.form-toast.show {
+  display: block !important;
+  opacity: 1 !important;
+  transform: translateX(-50%) translateY(0) !important;
+}
+
+/* Hidden state (display:none avoids focus traps) */
+.form-toast.hidden {
+   display: none !important;
+}
+
+.form-toast.success {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.form-toast.error {
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+/* Mobile sizing */
+@media (max-width: 600px) {
+  .form-toast {
+    width: 90%;
+    font-size: 0.95rem;
+    padding: 12px 20px;
+  }
+}
+
+/* Honeypot styling - keeps field visually hidden while still present in DOM */
+.hp-wrapper { position: absolute !important; left: -9999px !important; top: -9999px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
+.hp-wrapper input { opacity: 0 !important; pointer-events: none !important; }

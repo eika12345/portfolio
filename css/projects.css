@@ -1,0 +1,206 @@
+/* ---------------------------- section ---------------------------- */
+
+.projects {
+  text-align: center;
+  overflow: visible;
+}
+
+/* ---------------------------- project block ---------------------------- */
+
+.projects-content {
+  position: relative;
+  isolation: isolate;                 /* keeps the bg layer behind the content */
+  padding: 80px 10% 50px 10%;
+  border-top: 2px solid var(--color-white);
+}
+
+.projects-content h2 {
+  margin-bottom: 20px;
+  color: var(--color-white);
+  text-align: left;
+}
+
+.projects-content p {
+  color: var(--color-white);
+  font-family: var(--font-body-medium);
+}
+
+.projects-content p a {
+  color: var(--color-primary);        /* replaces the inline link styles */
+}
+
+/* ---------------------------- background layer ---------------------------- */
+
+.projects-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--bg-height, 750px);    /* fixed height = the image never resizes */
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)),
+    var(--bg-image);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-mask-image: linear-gradient(to bottom, #000 65%, transparent);
+  mask-image: linear-gradient(to bottom, #000 65%, transparent);
+}
+
+/* ---------------------------- image + text layout ---------------------------- */
+
+.project-showcase {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 25px 0;
+}
+
+.projects-content-images {
+  padding: 0 0 25px;
+}
+
+.project-showcase .projects-content-images {
+  flex: 0 0 55%;                      /* image width: lower it for a smaller image */
+  padding: 0;
+}
+
+.projects-content-images img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border: 2px solid var(--color-white);
+}
+
+.project-showcase-text {
+  flex: 1;
+  text-align: left;
+}
+
+/* ---------------------------- tags ---------------------------- */
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--spacing-sm);
+  margin: var(--spacing-md) 0 0 0;
+}
+
+/* ---------------------------- buttons + links ---------------------------- */
+
+.project-links {
+  display: flex;
+  align-items: center;                /* button and icons share one line */
+  justify-content: flex-start;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.project-toggle {
+  background-color: var(--color-white);
+  color: var(--color-background);
+  font-family: var(--font-body-medium);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-toggle:hover,
+.project-toggle:focus-visible {
+  transform: translateY(-2px);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.project-link:hover {
+  transform: translateY(-2px);
+}
+
+.project-link .icon {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+  transition: filter 0.3s ease, opacity 0.2s ease;
+}
+
+/* ---------------------------- expanding details ---------------------------- */
+
+/* Collapsed state. GSAP animates the height. */
+.project-details {
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+
+.project-details-inner {
+  padding-top: var(--spacing-md);
+}
+
+.detail-block {
+  margin-bottom: var(--spacing-md);
+}
+
+.detail-block h3 {
+  color: var(--color-tertiary);
+  margin-bottom: var(--spacing-xs);
+}
+
+/* ---------------------------- per project: background images ---------------------------- */
+
+.project-greensolar {
+  --bg-image: url("../images/greensolarbg.png");
+  margin-top: 50px;                   /* space under the sticky image (first project only) */
+}
+
+.project-90s            { --bg-image: url("../images/w98overhaulbg.jpg"); }
+.project-eikasden       { --bg-image: url("../images/eikasdenbg.png"); }
+.project-rightremovals  { --bg-image: url("../images/rightremovalsbg.jpg"); }
+.project-tabletennis    { --bg-image: url("../images/clissoldbg.jpeg"); }
+.project-corner-v2      { --bg-image: url("../images/eikascornerv2bg.jpg"); }
+.project-corner-old     { --bg-image: url("../images/eikascornerv1bg.png"); }
+.project-portfolio-v2   { --bg-image: url("../images/portfoliov2bg.jpg"); }
+
+/* ---------------------------- mobile ---------------------------- */
+
+@media (max-width: 768px) {
+  .projects-content {
+    padding: 25px 6% 50px 6%;
+  }
+
+  .projects-content::before {
+    height: var(--bg-height-mobile, 1000px);
+  }
+
+  .projects-content h2 {
+    text-align: center;
+  }
+
+  .project-showcase {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .project-showcase .projects-content-images {
+    flex: none;
+    width: 100%;
+  }
+
+  .project-showcase-text {
+    text-align: center;
+  }
+
+  .project-tags,
+  .project-links {
+    justify-content: center;
+  }
+}

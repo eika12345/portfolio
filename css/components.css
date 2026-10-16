@@ -1,0 +1,79 @@
+.components {
+  text-align: center;
+  color: var(--color-white);
+  overflow: visible; /* allows sticky to work */
+}
+
+/* Grid layout */
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  padding: 70px 10% 120px 10%;
+}
+
+/* Component Card */
+.component-card {
+  background-color: var(--color-background-dark);
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  z-index: 1
+}
+
+.component-card img {
+  width: 100%;
+  border-radius: 8px;
+  border: 2px solid var(--color-white);
+  margin-bottom: 15px;
+}
+
+.component-card h3 {
+  margin-bottom: 10px;
+  font-family: var(--font-body-medium);
+}
+
+.component-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+/* Component Link 
+.component-link img {
+  width: 25px;
+  height: 25px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  border: 0;
+  
+}
+.component-link:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}*/
+/* Responsive */
+@media (max-width: 768px) {
+  .components {
+  }
+
+  .components-header h2 {
+    font-size: 1.6rem;
+  }
+
+  .components-grid {
+    gap: 25px;
+  }
+}
+@media (max-width: 400px) {
+  .components-grid {
+    grid-template-columns: 1fr;
+    padding: 50px 20px;
+  }
+
+  .component-card {
+    width: 100%;
+  }
+}

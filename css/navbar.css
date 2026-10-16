@@ -1,0 +1,125 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: var(--spacing-sm) 0;
+  background-color: var(--color-background);
+  overflow: hidden;
+}
+
+/* navbar grain 
+.navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background-image: repeating-conic-gradient(
+    rgba(255,255,255,0.05) 0% 10%, 
+    rgba(0,0,0,0.05) 10% 20%
+  );
+  background-size: 3px 3px;
+  z-index: -1;
+  animation: grainMove 10s linear infinite;
+}*/
+
+.navbar .container {
+  position: relative;
+  z-index: 1;
+}
+
+.logo-img {
+  height: 25px;
+  width: auto;
+  display: block;
+}
+
+/* Links (desktop) */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a {
+  margin-left: var(--spacing-md);
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 15px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--color-tertiary);
+}
+
+/*hambuger button */
+.menu-toggle {
+  display: none; /* hidden by default (desktop) */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 18px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: var(--color-primary);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger → X animation */
+.menu-toggle.active span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+   .nav-links {
+    position: fixed;
+    top: 41px;           
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    max-height: 0;
+    pointer-events: none;
+    z-index: 999;
+    transition: max-height 0.4s ease;
+    background-color: var(--color-background-dark);
+  }
+
+  .nav-links.open {
+    max-height: 350px; 
+    pointer-events: all;
+  }
+
+  .nav-links a {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+}
