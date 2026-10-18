@@ -1,10 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
 
 <head>
-    <!-- GoatCounter-->
-  <script data-goatcounter="https://erikaspetrauskas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Erikas Petrauskas | Web Developer for Small Businesses</title>
+  <meta name="description" content="Full-stack web developer helping small businesses modernise their websites, attract more customers and look professional online.">
+  <link rel="canonical" href="https://erikaspetrauskas.com/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Erikas Petrauskas">
+  <meta property="og:title" content="Erikas Petrauskas | Web Developer for Small Businesses">
+  <meta property="og:description" content="I help small businesses modernise their websites to attract more customers and look professional online.">
+  <meta property="og:url" content="https://erikaspetrauskas.com/">
+  <meta property="og:image" content="https://erikaspetrauskas.com/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Erikas Petrauskas | Web Developer for Small Businesses">
+  <meta name="twitter:description" content="I help small businesses modernise their websites to attract more customers and look professional online.">
+  <meta name="twitter:image" content="https://erikaspetrauskas.com/images/og-image.png">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Erikas Petrauskas",
+    "url": "https://erikaspetrauskas.com/",
+    "jobTitle": "Full-stack web developer",
+    "description": "Full-stack web developer helping small businesses modernise their websites.",
+    "sameAs": [
+      "https://github.com/eika12345",
+      "https://www.upwork.com/freelancers/~01c82500ffd4c0a535"
+    ]
+  }
+  </script>
+
+  <!-- GoatCounter-->
+  <script data-goatcounter="https://erikaspetrauskas.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 
   <!-- Google tag (gtag.js) -->
   <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-LF2RWTNF8B"></script>-->
@@ -15,14 +47,13 @@
     gtag('config', 'G-LF2RWTNF8B');
   </script>-->
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Erikas Petrauskas</title>
-  <meta name="description" content="I help small businesses modernise their websites to attract more customers and look professional online.">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="manifest" href="/images/site.webmanifest">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
 
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/variables.css">
@@ -34,22 +65,32 @@
   <link rel="stylesheet" href="css/footer.css">
   <link rel="stylesheet" href="css/fonts.css">
 
-  <!-- Scripts -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.css" />
+
+  <style>
+    .sr-only {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+  </style>
+
+  <script src="https://unpkg.com/aos@3.0.0-beta.6/dist/aos.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
   <script src="js/scripts.js" defer></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-
-  <!-- GSAP -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-
-  <!-- AOS -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
  
 
-   <!-- Loading Screen -->
+   <!-- loading screen -->
   <div id="preloader">
     <div class="loader">
       <span id="progress-text">0%</span>
@@ -62,26 +103,26 @@
 
 
   <!---------------------------------------- navbar ---------------------------------------->
-  <nav class="navbar">
+  <nav class="navbar" aria-label="Main">
   <div class="container">
-    <a href="index.html">
-      <img src="images/ep.logo.png" alt="Logo" class="logo-img">
+    <a href="/" aria-label="Erikas Petrauskas, home">
+      <img src="images/ep.logo.png" alt="Erikas Petrauskas logo" class="logo-img">
     </a>
 
-    <!-- Hamburger Button -->
+    <!-- hamburger -->
     <button class="menu-toggle" aria-label="Toggle Menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
-    <!-- Nav Links -->
+    <!----------------- nav ----------------->
     <div class="nav-links">
       <a href="#projects">PROJECTS</a>
       <a href="#contact">CONTACT</a>
-      <a href="https://github.com/eika12345" target="_blank">GITHUB</a>
-      <a href="https://eikascorner.neocities.org/" target="_blank">EIKA'S CORNER</a>
-      <a href="ErikasPetrauskasCVWebdev2026.pdf" target="_blank">CV</a>
+      <a href="https://github.com/eika12345" target="_blank" rel="noopener noreferrer">GITHUB</a>
+      <a href="https://eikascorner.neocities.org/" target="_blank" rel="noopener noreferrer">EIKA'S CORNER</a>
+      <a href="ErikasPetrauskasCVWebdev2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
     </div>
   </div>
     </nav>
@@ -103,8 +144,9 @@
       <section id="about-me" class="about grain">
 
             <div class="sticky-image">
-              <img src="./images/about-me.png" alt="about me">
+              <img src="./images/about-me.png" alt="">
             </div>
+            <h2 class="sr-only">About me</h2>
 
           <div class="about-content">
                 <div class="about-content-text slide-up">
@@ -121,9 +163,9 @@
 
               <h2>SOME FACTS I'VE LEARNT</h2><br>
 
-            <p>“88% of online consumers are less likely to return after a bad experience.” - <a href="https://baymard.com/learn/ux-statistics" target="_blank" style="color: var(--color-primary);">Baymard Institute</a></p><br>
-            <p>“Mobile users are five times more likely to abandon a task if the website isn’t optimized for mobile.” - <a href="https://baymard.com/learn/ux-statistics" target="_blank" style="color: var(--color-primary);">Baymard Institute</a></p><br>
-            <p>“75% of users admit to making judgments about a company’s credibility based on their website’s design.” - <a href="https://credibility.stanford.edu/guidelines/index.html" target="_blank" style="color: var(--color-primary);">Stanford Web Credibility Research</a></p>
+            <p>“88% of online consumers are less likely to return after a bad experience.” - <a href="https://baymard.com/learn/ux-statistics" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">Baymard Institute</a></p><br>
+            <p>“Mobile users are five times more likely to abandon a task if the website isn’t optimized for mobile.” - <a href="https://baymard.com/learn/ux-statistics" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">Baymard Institute</a></p><br>
+            <p>“75% of users admit to making judgments about a company’s credibility based on their website’s design.” - <a href="https://credibility.stanford.edu/guidelines/index.html" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">Stanford Web Credibility Research</a></p>
 
 
               </div>
@@ -151,12 +193,13 @@
         </section>
       </section>
 
-      <!---------------------------------------- Projects ---------------------------------------->
+      <!---------------------------------------- projects ---------------------------------------->
       <section id="projects" class="projects grain">
 
         <div class="sticky-image">
-          <img src="./images/projects.png" alt="projects">
+          <img src="./images/projects.png" alt="">
         </div>
+        <h2 class="sr-only">Projects</h2>
 
         <!--------------------- Green Solar --------------------->
         <div class="projects-content project-greensolar">
@@ -164,7 +207,7 @@
 
           <div class="project-showcase">
             <div class="projects-content-images">
-              <img src="./images/greensolar.png" alt="green solar hero">
+              <img src="./images/greensolar.png" alt="Green Solar website homepage">
             </div>
 
             <div class="project-showcase-text">
@@ -182,12 +225,12 @@
                   <span class="label">Read more</span>
                 </button>
 
-                <a href="https://eika12345.github.io/greensolar.com/index.html" target="_blank" class="project-link" aria-label="view website">
-                  <img src="./images/link.png" alt="Live site link" class="icon link-image">
+                <a href="https://eika12345.github.io/greensolar.com/index.html" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="view website">
+                  <img src="./images/link.png" alt="" class="icon link-image">
                 </a>
 
-                <a href="https://github.com/eika12345/greensolar.com" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/greensolar.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
 
@@ -220,7 +263,7 @@
 
           <div class="project-showcase">
             <div class="projects-content-images">
-              <img src="./images/erikasportfolio98.jpg" alt="erikas 90s windows portfolio">
+              <img src="./images/erikasportfolio98.jpg" alt="Windows 98 themed portfolio website screenshot">
             </div>
 
             <div class="project-showcase-text">
@@ -237,12 +280,12 @@
                   <span class="label">Read more</span>
                 </button>           
 
-                <a href="https://eika12345.github.io/windows-98/" target="_blank" class="project-link" aria-label="view website">
-                  <img src="./images/link.png" alt="Live site link" class="icon link-image">
+                <a href="https://eika12345.github.io/windows-98/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="view website">
+                  <img src="./images/link.png" alt="" class="icon link-image">
                 </a>
 
-                <a href="https://github.com/eika12345/windows-98" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/windows-98" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
             </div>
@@ -267,11 +310,11 @@
 
           <div class="project-showcase">
             <div class="projects-content-images">
-              <img src="./images/eikasden1.png" alt="eikas den">
+              <img src="./images/eikasden1.png" alt="Eika's Den online fashion store homepage">
             </div>
 
             <div class="project-showcase-text">
-              <p>My brutalist style e-commerce website, inspired by <a href="https://golflefleur.com/" target="_blank">Golf Le Fleur</a>.</p>
+              <p>My brutalist style e-commerce website, inspired by <a href="https://golflefleur.com/" target="_blank" rel="noopener noreferrer">Golf Le Fleur</a>.</p>
 
               <div class="project-tags">
                 <span class="tag item">HTML</span>
@@ -286,8 +329,8 @@
                   <span class="label">Read more</span>
                 </button>
 
-                <a href="https://github.com/eika12345/Eikas-Den" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/Eikas-Den" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
             </div>
@@ -316,7 +359,7 @@
 
           <div class="project-showcase">
             <div class="projects-content-images">
-              <img src="./images/rightremovals.png" alt="right removals">
+              <img src="./images/rightremovals.png" alt="Right Removals redesigned website homepage">
             </div>
 
             <div class="project-showcase-text">
@@ -336,12 +379,12 @@
                   <span class="label">Read more</span>
                 </button>
 
-                <a href="https://eika12345.github.io/Right-Removals-Redesign/" target="_blank" class="project-link" aria-label="View website">
-                  <img src="./images/link.png" alt="Live site link" class="icon link-image">
+                <a href="https://eika12345.github.io/Right-Removals-Redesign/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View website">
+                  <img src="./images/link.png" alt="" class="icon link-image">
                 </a>
 
-                <a href="https://github.com/eika12345/Right-Removals-Redesign" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/Right-Removals-Redesign" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
             </div>
@@ -371,7 +414,7 @@
 
           <div class="project-showcase">
             <div class="projects-content-images">
-              <img src="./images/tabletennisclub.png" alt="table tennis club">
+              <img src="./images/tabletennisclub.png" alt="Table tennis club homepage mock-up">
             </div>
 
             <div class="project-showcase-text">
@@ -388,12 +431,12 @@
                   <span class="label">Read more</span>
                 </button>
 
-                <a href="https://eika12345.github.io/Table-Tennis-Club/" target="_blank" class="project-link" aria-label="View website">
-                  <img src="./images/link.png" alt="Live site link" class="icon link-image">
+                <a href="https://eika12345.github.io/Table-Tennis-Club/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View website">
+                  <img src="./images/link.png" alt="" class="icon link-image">
                 </a>
 
-                <a href="https://github.com/eika12345/Table-Tennis-Club" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/Table-Tennis-Club" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
             </div>
@@ -417,7 +460,7 @@
 
           <div class="project-showcase">
             <div class="projects-content-images">
-              <img src="./images/eikascornerv2.png" alt="eikas corner">
+              <img src="./images/eikascornerv2.png" alt="Eika's Corner blog, version 2, homepage">
             </div>
 
             <div class="project-showcase-text">
@@ -435,12 +478,12 @@
                   <span class="label">Read more</span>
                 </button>
 
-                <a href="https://eikascorner.neocities.org/" target="_blank" class="project-link" aria-label="View website">
-                  <img src="./images/link.png" alt="Live site link" class="icon link-image">
+                <a href="https://eikascorner.neocities.org/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View website">
+                  <img src="./images/link.png" alt="" class="icon link-image">
                 </a>
 
-                <a href="https://github.com/eika12345/eikas-corner" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/eikas-corner" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
             </div>
@@ -466,7 +509,7 @@
 
           <div class="project-showcase">
             <div class="projects-content-images">
-              <img src="./images/eikascorner.png" alt="eikas corner">
+              <img src="./images/eikascorner.png" alt="Eika's Corner original Windows 98 themed blog">
             </div>
 
             <div class="project-showcase-text">
@@ -484,12 +527,12 @@
                   <span class="label">Read more</span>
                 </button>
 
-                <a href="https://eika12345.github.io/eikascorner-old/" target="_blank" class="project-link" aria-label="View website">
-                  <img src="./images/link.png" alt="Live site link" class="icon link-image">
+                <a href="https://eika12345.github.io/eikascorner-old/" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View website">
+                  <img src="./images/link.png" alt="" class="icon link-image">
                 </a>
 
-                <a href="https://github.com/eika12345/eikascorner-old" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/eikascorner-old" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
             </div>
@@ -513,7 +556,7 @@
 
           <div class="project-showcase">
             <div class="projects-content-images">
-              <img src="./images/erikasportfolio1.png" alt="erikas portfolio old">
+              <img src="./images/erikasportfolio1.png" alt="Late 90s themed portfolio website screenshot">
             </div>
 
             <div class="project-showcase-text">
@@ -530,8 +573,8 @@
                   <span class="label">Read more</span>
                 </button>
 
-                <a href="https://github.com/eika12345/Late-90s-Web-Portfolio" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/Late-90s-Web-Portfolio" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
             </div>
@@ -572,8 +615,8 @@
                   <span class="label">Read more</span>
                 </button>
 
-                <a href="https://github.com/eika12345/Portfolio-v1-OLD" target="_blank" class="project-link" aria-label="View on GitHub">
-                  <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+                <a href="https://github.com/eika12345/Portfolio-v1-OLD" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+                  <img src="./images/github.png" alt="" class="icon github-image">
                 </a>
               </div>
             </div>
@@ -611,12 +654,12 @@
           <img src="./images/nonamerppage1.png" alt="no name rp">
           </div>
 
-          <a href="https://your-live-project.com" target="_blank" class="project-link" aria-label="View Live Project">
-              <img src="./images/link.png" alt="Live site link" class="icon link-image">
+          <a href="https://your-live-project.com" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View Live Project">
+              <img src="./images/link.png" alt="" class="icon link-image">
             </a>
 
-            <a href="https://github.com/yourusername/your-repo" target="_blank" class="project-link" aria-label="View on GitHub">
-              <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+            <a href="https://github.com/yourusername/your-repo" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+              <img src="./images/github.png" alt="" class="icon github-image">
             </a>
 
           </div>-->
@@ -631,8 +674,8 @@
           </div>
 
 
-            <a href="https://github.com/eika12345/email-subscription-form" target="_blank" class="project-link" aria-label="View on GitHub">
-              <img src="./images/github.png" alt="GitHub link" class="icon github-image">
+            <a href="https://github.com/eika12345/email-subscription-form" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+              <img src="./images/github.png" alt="" class="icon github-image">
             </a>
             
           </div>-->
@@ -645,10 +688,10 @@
         <section id="components" class="components grain">
 
         <div class="sticky-image">
-          <img src="./images/components.png" alt="components">
+          <img src="./images/components.png" alt="">
         </div>
 
-        <h2>(in progress)</h2>
+        <h2><span class="sr-only">Components </span>(in progress)</h2>
 
 
         <!-- Components Grid -->
@@ -660,8 +703,8 @@
             <h3>Email Subscription Form</h3>
             <p>A modern “Coming Soon” page powered by Brevo CRM, with responsive design and integrated email signup.</p>
 
-              <a href="https://github.com/eika12345/email-subscription-form" target="_blank" class="project-link" aria-label="View on GitHub">
-              <img src="./images/github.png" alt="GitHub link" class="icon github-image" style="border: 0;">
+              <a href="https://github.com/eika12345/email-subscription-form" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+              <img src="./images/github.png" alt="" class="icon github-image" style="border: 0;">
               </a>
           </div>
 
@@ -671,8 +714,8 @@
             <h3>Events Page</h3>
             <p>Dynamic events page powered by a live Google Sheet feed.</p>
 
-            <a href="https://github.com/eika12345/events-page" target="_blank" class="project-link" aria-label="View on GitHub">
-              <img src="./images/github.png" alt="GitHub link" class="icon github-image" style="border: 0;">
+            <a href="https://github.com/eika12345/events-page" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="View on GitHub">
+              <img src="./images/github.png" alt="" class="icon github-image" style="border: 0;">
               </a>
           </div>
 
@@ -681,8 +724,8 @@
             <img src="./images/emailform1.png" alt="Toast Notification">
             <h3>Animated Toast Notification</h3>
             <p>A reusable success/error toast system that smoothly fades in/out, used in my contact form.</p>
-            <a href="https://github.com/eika12345" target="_blank" class="component-link">
-              <img src="./images/github.png" alt="GitHub link">
+            <a href="https://github.com/eika12345" target="_blank" rel="noopener noreferrer" class="component-link">
+              <img src="./images/github.png" alt="">
             </a>
           </div>-->
 
@@ -693,21 +736,22 @@
       <section id="contact" class="contact grain">
 
         <div class="sticky-image">
-            <img src="./images/contact.png" alt="contact img">
+            <img src="./images/contact.png" alt="">
           </div>
 
+          <h2 class="sr-only">Contact</h2>
           <div class="contact-image">
-          <a href="https://github.com/eika12345" target="_blank">
-            <img src="./images/github.png" alt="github"></a>
+          <a href="https://github.com/eika12345" target="_blank" rel="noopener noreferrer">
+            <img src="./images/github.png" alt="GitHub profile"></a>
 
-          <a href="mailto:webdev@erikaspetrauskas.com" target="_blank">
-            <img src="./images/mail.png" alt="email"></a>
+          <a href="mailto:webdev@erikaspetrauskas.com">
+            <img src="./images/mail.png" alt="Email Erikas"></a>
 
-          <a href="https://www.upwork.com/freelancers/~01c82500ffd4c0a535?viewMode=1" target="_blank">
-            <img src="./images/upwork.png" alt="upwork"></a>
+          <a href="https://www.upwork.com/freelancers/~01c82500ffd4c0a535?viewMode=1" target="_blank" rel="noopener noreferrer">
+            <img src="./images/upwork.png" alt="Upwork profile"></a>
 
-          <a href="https://www.instagram.com/erikas.2005/" target="_blank">
-            <img src="./images/instagram.png" alt="instagram"></a>
+          <a href="https://www.instagram.com/erikas.2005/" target="_blank" rel="noopener noreferrer">
+            <img src="./images/instagram.png" alt="Instagram profile"></a>
 
           </div>
         <form id="contact-form" action="https://formspree.io/f/xovkkwpw" method="POST">
@@ -744,14 +788,14 @@
       <!---------------------------------------- footer --------------------------------------->
       <footer id="footer" class="footer">
         <div class="footer-container">
-          <p>Made by Erikas Petrauskas. Contact form powered by <a href="https://formspree.io/" target="_blank" style="color: var(--color-primary);">Formspree.</a></p>
+          <p>Made by Erikas Petrauskas. Contact form powered by <a href="https://formspree.io/" target="_blank" rel="noopener noreferrer" style="color: var(--color-primary);">Formspree.</a></p>
           <div class="footer-links">
             <a href="#projects">PROJECTS</a>
             <a href="#contact">CONTACT</a>
-            <a href="https://github.com/eika12345" target="_blank">GITHUB</a>
-            <a href="https://eikascorner.neocities.org/" target="_blank">EIKA'S CORNER</a>
+            <a href="https://github.com/eika12345" target="_blank" rel="noopener noreferrer">GITHUB</a>
+            <a href="https://eikascorner.neocities.org/" target="_blank" rel="noopener noreferrer">EIKA'S CORNER</a>
             <a href="privacy.html">PRIVACY</a>
-            <a href="ErikasPetrauskasCVWebdev2026.pdf" target="_blank">CV</a>
+            <a href="ErikasPetrauskasCVWebdev2026.pdf" target="_blank" rel="noopener noreferrer">CV</a>
           </div>
         </div>
       </footer>

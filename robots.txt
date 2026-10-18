@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://erikaspetrauskas.com/sitemap.xml
