@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
+
 <head>
+  <!-- GoatCounter-->
+  <script data-goatcounter="https://erikaspetrauskas.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 
 <!-- Google tag (gtag.js) -->
 <!--<script async src="https://www.googletagmanager.com/gtag/js?id=G-LF2RWTNF8B"></script>-->
@@ -11,30 +14,6 @@
   gtag('js', new Date());
   gtag('config', 'G-LF2RWTNF8B');-->
   
-<script>
-
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  // Toggle mobile menu
-  menuToggle.addEventListener("click", () => {
-    menuToggle.classList.toggle("active");
-    navLinks.classList.toggle("open");
-  });
-
-  // Close menu when clicking a link
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      menuToggle.classList.remove("active");
-      navLinks.classList.remove("open");
-    });
-  });
-});
-
-</script>
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Erikas Petrauskas</title>
   <meta name="description" content="I modernise small businesses to attract more customers and look professional online.">
@@ -46,8 +25,15 @@ document.addEventListener("DOMContentLoaded", () => {
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="manifest" href="/images/site.webmanifest">
 
-  <link rel="stylesheet" href="css/variables-v2.css">
-  <link rel="stylesheet" href="css/stylesheet-v2.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/about-me.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="stylesheet" href="css/fonts.css">
 
   <!-- GSAP -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -152,6 +138,24 @@ document.addEventListener("DOMContentLoaded", () => {
 </footer>
 
 <script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  // Toggle mobile menu
+  menuToggle.addEventListener("click", () => {
+    menuToggle.classList.toggle("active");
+    navLinks.classList.toggle("open");
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      menuToggle.classList.remove("active");
+      navLinks.classList.remove("open");
+    });
+  });
+});
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);
   };
